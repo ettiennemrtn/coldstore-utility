@@ -89,14 +89,14 @@
 </head>
 <body>
 <header>
-  <h1>❄️ Cold Store Tracker</h1>
+  <h1>Cold Store Tracker</h1>
   <div class="sub" id="grandTotal">Loading…</div>
 </header>
 <main id="main"></main>
 
 <dialog id="importDlg">
   <div class="dlg-body">
-    <h3 class="danger-title">⚠️ Overwrite all data?</h3>
+    <h3 class="danger-title">Overwrite all data?</h3>
     <p>You're about to import <strong id="importFileName"></strong>.</p>
     <p class="danger-text">This will <strong>permanently replace every room's data</strong> currently
       on this device — pallet counts, orchard numbers, sealed status, suction status — with
@@ -254,7 +254,7 @@ function renderRoom(room){
   entriesDiv.querySelectorAll(".rm-btn").forEach(btn => {
     btn.addEventListener("click", onRemoveEntry);
   });
-  top.querySelector(".seal-toggle").addEventListener("change", onSealToggle);
+  top.querySelectorAll(".seal-toggle").forEach(sw => sw.addEventListener("change", onSealToggle));
 
   return div;
 }
